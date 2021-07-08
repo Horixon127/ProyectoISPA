@@ -72,7 +72,7 @@
                         id="email"
                         aria-describedby="emailHelp"
                       />
-                      <small id="emailHelp" class="form.text text-muted">
+                      <small id="emailHelp" class="text-muted">
                         Escribe tu direccion de correo Electronico</small
                       >
 
@@ -82,7 +82,7 @@
                           required
                           type="password"
                           class="form-control"
-                          id="passwd"
+                          id="password"
                           aria-describedby="passwdHelp"
                         />
                         <small id="passwdHelp" class="form.text text-muted">
@@ -108,17 +108,39 @@
                   role="tabpanel"
                   aria-labelledby="list-register-list"
                 >
-                  <form>
+                  <form action= "./config/Registro.php"  method="POST">
+                  
+                  <?php
+
+                if (isset($_GET['confirm'])) {
+
+                    if ($_GET['confirm'] === "0") {
+                        echo '<div class="alert alert-danger" role="alert"> <h6>Datos no ingresados <h6> </div>';
+                    }
+                    if ($_GET['confirm'] === "1") {
+                        echo '<div class="alert alert-success" role="alert"> <h6> Se Añadio correctamente a el estudiante<h6> </div>';
+                    }
+                    if ($_GET['confirm'] === "2") {
+                        echo '<div class="alert alert-warning" role="alert"> <h6>Uno o mas campos estan vacios<h6> </div>';
+                    }
+                    if ($_GET['confirm'] === "3") {
+                        echo '<div class="alert alert-warning" role="alert"> <h6>El usuario ya esta registrado<h6> </div>';
+                    }
+
+                }
+
+              ?>
                     <div class="form-group">
                       <label for="userId">Identificación</label>
                       <input
                         required
                         type="id"
                         class="form-control"
-                        id="userId"
+                        name="identificacion"
+                        id="userid"
                         aria-describedby="IdHelp"
                       />
-                      <small id="IdHelp" class="form.text text-muted">
+                      <small id="IdHelp" class="form-text text-muted">
                         Escribe tu numero de Identificación</small
                       >
 
@@ -128,10 +150,11 @@
                           required
                           type="text"
                           class="form-control"
-                          id="name"
+                          name="names"
+                          id="names"
                           aria-describedby="nameHelp"
                         />
-                        <small id="nameHelp" class="form.text text-muted">
+                        <small id="nameHelp" class="form-text text-muted">
                           Escribe tu nombre</small
                         >
 
@@ -141,10 +164,11 @@
                             required
                             type="lastName"
                             class="form-control"
-                            id="lastName"
+                            name="apellidos"
+                            id="lastname"
                             aria-describedby="lastNameHelp"
                           />
-                          <small id="lastNameHelp" class="form.text text-muted">
+                          <small id="lastNameHelp" class="form-text text-muted">
                             Escribe tu apellido</small
                           >
 
@@ -154,10 +178,11 @@
                               required
                               type="email"
                               class="form-control"
-                              id="email"
+                              name="username"
+                              id="usernames"
                               aria-describedby="emailHelp"
                             />
-                            <small id="emailHelp" class="form.text text-muted">
+                            <small id="emailHelp" class="form-text text-muted">
                               Escribe tu direccion de correo Electronico</small
                             >
 
@@ -167,30 +192,32 @@
                                 required
                                 type="password"
                                 class="form-control"
+                                name="pxssword"
                                 id="passwd"
                                 aria-describedby="passwdHelp"
                               />
                               <small
                                 id="passwdHelp"
-                                class="form.text text-muted"
+                                class="form-text text-muted"
                               >
                                 Escribe tu Contraseña</small
                               >
 
                               <div class="form-group">
-                                <label for="passwdConfirm">
+                                <label for="passwdconfirm">
                                   Confirmar Contraseña</label
                                 >
                                 <input
                                   required
                                   type="password"
                                   class="form-control"
+                                  name="passwordconfirm"
                                   id="passwdConfirm"
                                   aria-describedby="passwdConfirmHelp"
                                 />
                                 <small
                                   id="passwdconfirmHelp"
-                                  class="form.text text-muted"
+                                  class="form-text text-muted"
                                 >
                                   Escribe tu Contraseña</small
                                 >
@@ -210,7 +237,7 @@
                                 type="submit"
                                 class="btn btn-primary btn-block"
                               >
-                                Iniciar Sesion
+                                Registrar
                               </button>
                               <script
                                 src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
