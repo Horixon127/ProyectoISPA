@@ -59,12 +59,37 @@
             return ($query);
         }
 
-        public function datosCorredores() {
+        public function datosUsuarios() {
             $conexion = Database::getInstance();
             $query = $conexion->db->prepare("SELECT * from estudiantes");
             $query->execute();
             return $query;
             
         }
+
+        public function registrarUsuarios($identificacion, $names, $apellidos, $username, $pxssword){
+
+            try{
+                $conexion = Database::getInstance(); 
+                $query = $conexion->db->prepare("INSERT INTO users (identificacion, names, apellidos, username, pxssword ) VALUES (:identificacion, :names, :apellidos, :username, :pxssword)");
+                $query->execute(
+                    array(
+                        ':identificacion' => $identificacion,
+                        ':names' => $names,
+                        ':apellidos' => $apellidos,
+                        ':username' => $username,
+                        ':pxssword' => $pxssword
+                        )
+                    );
+
+                return 1; 
+
+            }catch(PDOException $error){
+
+                return 0; 
+
+            }
+        }
+    
     }
 ?>      
