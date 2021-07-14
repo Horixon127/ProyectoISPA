@@ -1,5 +1,5 @@
 <?php
-include_once("DB-CrearEstudiante.php");
+include_once("DB-Conect.php");
 
 if(isset($_POST['userid']) && isset($_POST['names']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['numbers'])) {
 

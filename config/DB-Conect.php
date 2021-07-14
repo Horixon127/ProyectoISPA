@@ -47,6 +47,30 @@
                 return 0; 
             }
         }
+        public function insertarMateria($nombre){
+            try{
+                $conexion = Database::getInstance()
+                $query = $conexion->db->prepare('INSERT INTO materia (nombre) VALUES (:nombre)');
+                $query->execute(
+                    array(
+                        ':nombre' => $nombre
+                        )
+                    );
+
+                return 1;
+
+            } catch(PDOException $error){
+
+                return 0; 
+
+            }
+        }
+            public function datesMaterias(){
+                $conexion=Database::getInstance();
+                $query=$conexion->db->prepare('SELECT * from materia');
+                $query->execute();
+                return $query;
+     }
 
         public function validarIdentificacion($userid) {
             $conexion = Database::getInstance();
@@ -90,6 +114,39 @@
 
             }
         }
+        
+        public function editMateria($id){
+            $conexion=Database::getInstance();
+            $query=$conexion->db->prepare('SELECT * from materias WHERE id=:id');
+            $query->execute(
+                array(
+                    ':id'=>$id
+                )
+            );
+            return $query; 
+        }
+
+        public function updateMateria($id, $nombre){
+
+            try {
+
+                $conexion=Database::getInstance();
+                $query=$conexion->db->prepare('UPDATE materias SET nombre=:nombre WHERE id=:id');
+                $query->execute(
+                    array(
+                    ':nombre'=>$nombre,
+                    ':id'=>$id  
+                    )
+                );
+
+                return $query;
+
+            } catch(PDOException $error) {
+                return '5';
+            }
+
+        }
+    
     
     }
 ?>      

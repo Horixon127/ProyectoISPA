@@ -4,7 +4,7 @@
     if(isset($_POST['identificacion']) && isset($_POST['names']) && isset($_POST['apellidos']) && isset($_POST['username']) && isset($_POST['pxssword'])&& isset($_POST['passwordconfirm'])) {
         if($_POST['identificacion'] !== "" && $_POST['names'] !== "" && $_POST['apellidos'] !== "" && $_POST['username'] !== "" && $_POST['pxssword'] !== ""&& $_POST['passwordconfirm'] !== "") {
     
-
+            
                 $identificacion = $_POST['identificacion'];
                 $names = $_POST['names'];
                 $apellidos = $_POST['apellidos'];
