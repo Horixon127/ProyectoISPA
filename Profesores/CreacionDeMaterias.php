@@ -24,20 +24,39 @@
         <div class="card-header">
           <div class="d-flex">
             <h4>Creacion De Materias</h4>
-            <button class="btn btn-primary text-white ml-auto">Regresar</button>
+                <a href="./Materias.php" class="btn btn-primary ml-auto" role="button">Regresar</a>
           </div>
         </div>
-        <form>
+        <form action="../config/RegistrarMateria.php" method="POST">
+        <?php
+                if (isset($_GET['confirm'])) {
+
+                    if ($_GET['confirm'] === "0") {
+                        echo '<div class="alert alert-danger" role="alert"> <h6>Datos no ingresadosh6> </div>';
+                    }
+                    if ($_GET['confirm'] === "1") {
+                        echo '<div class="alert alert-success" role="alert"> <h6> Se Añadio correctamente a el estudiante<h6> </div>';
+                    }
+                    if ($_GET['confirm'] === "2") {
+                        echo '<div class="alert alert-warning" role="alert"> <h6>Uno o mas campos estan vacios<h6> </div>';
+                    }
+                    if ($_GET['confirm'] === "3") {
+                        echo '<div class="alert alert-warning" role="alert"> <h6>El usuario ya esta registrado<h6> </div>';
+                    }
+
+                }
+            ?>
           <div class="form-group">
             <br />
-            <label for="name">Nombres</label>
+            <label for="name">Nombre</label>
             <input
               required
               type="text"
               class="form-control"
-              id="name"
+              id="userid"
+              name="nombre"
               aria-describedby="nameHelp"
-            />
+              />
             <br />
             
             <button type="submit" class="btn btn-primary">Crear</button><br />

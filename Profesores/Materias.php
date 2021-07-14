@@ -1,3 +1,11 @@
+<?php
+include_once('../config/DB-conect.php');
+
+  $conexion = new Database;
+  $resultado = $conexion->datesMaterias();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -23,10 +31,10 @@
         <div class="card">
           <div class="card-header">
             <div class="d-flex">
-              <h4>Listado De Estudiantes</h4>
-              <button class="btn btn-primary text-white ml-auto">
+              <h4>Listado De Materias</h4>
+              <a href="./CreacionDeMaterias.php" class="btn btn-primary ml-auto" role="button" aria-disabled="true">
                 Crear Materias
-              </button>
+              </a>
             </div>
           </div>
 
@@ -44,54 +52,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Juan Ostios</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">
-                      Modificar
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Mariuth Nicole</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">
-                      Modificar
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Harold Sanchez</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">
-                      Modificar
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Juan Gomez</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">
-                      Modificar
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
+              <?php
+                  foreach($resultado as $row){
+                         echo '<tr>
+                            <td>'.$row['id'].'</td>
+                            <td>'.$row['nombres'].'</td>
+                            <td>
+                              <button type="button" class="btn btn-primary">Modificar</button>
+                              <button type="button" class="btn btn-danger">Eliminar</button>
+                        </td>
+                       </tr>';    
+                   }
+                 ?>
               </tbody>
             </table>
           </form>

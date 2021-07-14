@@ -1,8 +1,8 @@
 <?php
-    include_once('../config/DB-CrearEstudiante.php');
+    include_once('../config/DB-Conect.php');
 
     $conexion = new Database;
-    $resultado = $conexion->datosCorredores();
+    $resultado = $conexion->datosUsuarios();
 
 ?>
 
