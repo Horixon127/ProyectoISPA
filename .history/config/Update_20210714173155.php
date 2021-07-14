@@ -1,7 +1,4 @@
 <?php
-
-    include_once('../config/DB-Conect.php');
-
     if (isset($_POST['nombre']) && isset($_POST['id'])){
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];

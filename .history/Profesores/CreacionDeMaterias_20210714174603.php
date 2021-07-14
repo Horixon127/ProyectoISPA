@@ -38,7 +38,7 @@
           }
 
           if ($_GET['confirm'] === "4") {
-            echo '<div class="my-3 alert alert-success" role="alert"> <h6>materia actualizada<h6> </div>';
+            echo '<div class="my-3alert alert-success" role="alert"> <h6>materia actualizada<h6> </div>';
           }
           if ($_GET['confirm'] === "5") {
             echo '<div class="my-3 alert alert-warning" role="alert"> <h6>error al actualizar<h6> </div>';

@@ -1,20 +1,3 @@
-<?php
-include_once("../config/DB-Conect.php");
-
-//id = id que llega del get
-$id = $_GET['id'];
-
-$conexion = new Database;
-$materia = $conexion->editMateria($id);
-
-$idMateria = "";
-$nomMateria = "";
-foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
-    $idMateria = $columnaMateria->id;
-    $nomMateria = $columnaMateria->nombre;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -48,7 +31,7 @@ foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
             <div>
                 <div class="form-group">
                   <label for="userId">Id</label>
-                    <input value="<?=$idMateria?>" type="text" class="form-control" name="id" id="id" aria-describedby="idMateria">
+                    <input value="<?=$idMateria?>" disabled type="text" class="form-control" name="id" id="id" aria-describedby="idMateria">
                   <label for="userId">Nombre</label>
                     <input value="<?=$nomMateria?>" type="text" class="form-control" name="nombre" id="userId" aria-describedby="idHelp" required>
                 </div>

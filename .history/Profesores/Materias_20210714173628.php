@@ -56,11 +56,11 @@ include_once('../config/DB-conect.php');
                   foreach($resultado as $row){
                          echo '<tr>
                             <td>'.$row['id'].'</td>
-                            <td>'.$row['nombre'].'</td><!--cambiar a nombres-->
+                            <td>'.$row['nombre'].'</td>
                             <td>
-                            <a href="Edith_Materias.php?id='.$row['id'].'" type="button" class="btn btn-primary">Modificar</a>
-                            <a href="#algo" type="button" class="btn btn-danger">Eliminar</a>
-                            </td>
+                              <button type="button" class="btn btn-primary">Modificar</button>
+                              <button type="button" class="btn btn-danger">Eliminar</button>
+                        </td>
                        </tr>';    
                    }
                  ?>

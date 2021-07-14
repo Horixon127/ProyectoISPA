@@ -58,7 +58,7 @@ include_once('../config/DB-conect.php');
                             <td>'.$row['id'].'</td>
                             <td>'.$row['nombre'].'</td><!--cambiar a nombres-->
                             <td>
-                            <a href="Edith_Materias.php?id='.$row['id'].'" type="button" class="btn btn-primary">Modificar</a>
+                            <a href="Edith_Materias.php?id='.$fila['id'].'" type="button" class="btn btn-primary">Modificar</a>
                             <a href="#algo" type="button" class="btn btn-danger">Eliminar</a>
                             </td>
                        </tr>';    

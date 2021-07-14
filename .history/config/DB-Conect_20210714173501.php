@@ -4,7 +4,7 @@
     class Database {
 
         public $db;
-            private static $dns = "mysql:host=localhost;dbname=colegio"; //cambiar colegioispa
+            private static $dns = "mysql:host=localhost;dbname=colegio"; 
             private static $user = "root";  
             private static $pass = "";      
             private static $instance;      
@@ -67,7 +67,7 @@
         }
             public function datesMaterias(){
                 $conexion=Database::getInstance();
-                $query=$conexion->db->prepare('SELECT * from materias');//cambiar materia
+                $query=$conexion->db->prepare('SELECT * from materia');
                 $query->execute();
                 return $query;
      }
@@ -139,7 +139,7 @@
                     )
                 );
 
-                return '4';
+                return $query;
 
             } catch(PDOException $error) {
                 return '5';

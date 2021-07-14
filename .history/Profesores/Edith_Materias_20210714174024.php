@@ -48,7 +48,7 @@ foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
             <div>
                 <div class="form-group">
                   <label for="userId">Id</label>
-                    <input value="<?=$idMateria?>" type="text" class="form-control" name="id" id="id" aria-describedby="idMateria">
+                    <input value="<?=$idMateria?>" disabled type="text" class="form-control" name="id" id="id" aria-describedby="idMateria">
                   <label for="userId">Nombre</label>
                     <input value="<?=$nomMateria?>" type="text" class="form-control" name="nombre" id="userId" aria-describedby="idHelp" required>
                 </div>
