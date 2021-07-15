@@ -71,3 +71,4 @@ include_once('../config/DB-conect.php');
       </div>
     </div>
   </body>
+</html>
