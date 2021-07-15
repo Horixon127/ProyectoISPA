@@ -43,7 +43,7 @@ include_once('../config/DB-conect.php');
               Nose Pudo Realizar La Acciòn, Comunicate Con El Administrador
             </div>
 
-            <table class="table">
+            <table class="table ml-end">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">#</th>
@@ -71,4 +71,3 @@ include_once('../config/DB-conect.php');
       </div>
     </div>
   </body>
-</html>

@@ -41,16 +41,16 @@ foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
         <div class="card-header">
           <div class="d-flex">
             <h4>Creacion De Materias</h4>
-            <button class="btn btn-primary text-white ml-auto">Regresar</button>
+            <a href="./Materias.php" class="btn btn-primary ml-auto" role="button">Regresar</a>
           </div>
         </div>
         <form action="../config/Update.php" method="POST">
-            <div>
+            <div> <br>
                 <div class="form-group">
-                  <label for="userId">Id</label>
-                    <input value="<?=$idMateria?>" type="text" class="form-control" name="id" id="id" aria-describedby="idMateria">
-                  <label for="userId">Nombre</label>
-                    <input value="<?=$nomMateria?>" type="text" class="form-control" name="nombre" id="userId" aria-describedby="idHelp" required>
+                  <label for="userId"><h4>ID</h4></label> 
+                    <input value="<?=$idMateria?>" type="text" class="form-control" name="id" id="id" aria-describedby="idMateria"> <br>
+                  <label for="userId"><h4>Nombre</h4></label> 
+                    <input value="<?=$nomMateria?>" type="text" class="form-control" name="nombre" id="userId" aria-describedby="idHelp" required> <br>
                 </div>
              <button type="Submit" class="btn ml-auto btn-primary">Actualizar</button>
           </div>

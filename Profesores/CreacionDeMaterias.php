@@ -19,29 +19,28 @@
           <h4>Creacion De Materias</h4>
           <a href="./Materias.php" class="btn btn-primary ml-auto" role="button">Regresar</a>
         </div>
-      </div>
+      </div> <br>
       <form action="../config/RegistrarMateria.php" method="POST">
         <?php
         if (isset($_GET['confirm'])) {
 
           if ($_GET['confirm'] === "0") {
-            echo '<div class="alert alert-danger" role="alert"> <h6>Datos no ingresadosh6> </div>';
+            echo '<div class="alert alert-danger" role="alert"> <h6>Datos no ingresadosh6> </div> ';
           }
           if ($_GET['confirm'] === "1") {
-            echo '<div class="alert alert-success" role="alert"> <h6> Se Añadio correctamente a el estudiante<h6> </div>';
+            echo '<div class="alert alert-success" role="alert"> <h6> Se Añadio correctamente La Materia<h6> </div> ';
           }
           if ($_GET['confirm'] === "2") {
             echo '<div class="alert alert-warning" role="alert"> <h6>Uno o mas campos estan vacios<h6> </div>';
           }
           if ($_GET['confirm'] === "3") {
-            echo '<div class="alert alert-warning" role="alert"> <h6>El usuario ya esta registrado<h6> </div>';
+            echo '<div class="alert alert-warning" role="alert"> <h6>La Materia Ya Esta Registrada<h6> </div> ';
           }
-
           if ($_GET['confirm'] === "4") {
             echo '<div class="my-3 alert alert-success" role="alert"> <h6>materia actualizada<h6> </div>';
           }
           if ($_GET['confirm'] === "5") {
-            echo '<div class="my-3 alert alert-warning" role="alert"> <h6>error al actualizar<h6> </div>';
+            echo '<div class="my-3 alert alert-warning" role="alert"> <h6>error al actualizar<h6> </div> ';
           }
         }
         ?>
@@ -51,7 +50,7 @@
           <input required type="text" class="form-control" id="userid" name="nombre" aria-describedby="nameHelp" />
           <br />
 
-          <button type="submit" class="btn btn-primary">Crear</button><br />
+          <button type="submit" class="btn btn-primary">Crear</button>
         </div>
       </form>
     </div>
