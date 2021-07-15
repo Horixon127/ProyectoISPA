@@ -1,10 +1,9 @@
-
 <?php
 
     class Database {
 
         public $db;
-            private static $dns = "mysql:host=localhost;dbname=colegio"; //cambiar colegioispa
+            private static $dns = "mysql:host=localhost;dbname=colegioispa"; //cambiar colegioispa
             private static $user = "root";  
             private static $pass = "";      
             private static $instance;      
@@ -50,7 +49,7 @@
         public function insertarMateria($nombre){
             try{
                 $conexion = Database::getInstance();
-                $query = $conexion->db->prepare('INSERT INTO materia (nombre) VALUES (:nombre)');
+                $query = $conexion->db->prepare('INSERT INTO materias (nombre) VALUES (:nombre)');
                 $query->execute(
                     array(
                         ':nombre' => $nombre
